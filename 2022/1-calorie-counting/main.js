@@ -1,15 +1,8 @@
 // DAY 1: Calorie Counting
 
-var fs = require("fs");
+const { readInput } = require("../file-read.js");
 
-let calories;
-
-try {
-  var data = fs.readFileSync("input.txt", "utf8");
-  calories = data.split("\n").map(Number);
-} catch (e) {
-  console.log("Error:", e.stack);
-}
+const calories = readInput("input.txt").map(Number);
 
 function groupCalories(calories) {
   if (!calories) return null;
